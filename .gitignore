@@ -1,0 +1,58 @@
+# Ignorar carpetas de compilación
+bin/
+obj/
+[Dd]ebug/
+[Rr]elease/
+x64/
+x86/
+build/
+bld/
+
+# Ignorar archivos de Visual Studio
+.vs/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Ignorar archivos de usuario
+*.userprefs
+*.crunchproj.userprefs
+*.crunchproj.user
+
+# Ignorar paquetes de NuGet
+packages/
+*.nupkg
+
+# Ignorar archivos de base de datos
+*.mdf
+*.ldf
+*.sdf
+
+# Ignorar archivos de Entity Framework
+*.dbmdl
+*.dbproj.schemaview
+
+# Ignorar archivos de Node.js (si usas)
+node_modules/
+npm-debug.log
+
+# Ignorar archivos de Visual Studio Code
+.vscode/
+
+# Ignorar archivos temporales
+*.tmp
+*.temp
+*.log
+
+# Ignorar archivos de cobertura de pruebas
+*.coverage
+*.coveragexml
+*.trx
+
+# Ignorar archivos de publicación
+*.pubxml
+*.publishproj
+
+# Ignorar la carpeta de la base de datos local
+App_Data/

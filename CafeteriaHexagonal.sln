@@ -1,0 +1,48 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.37531.7
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApiCafeteria", "ApiCafeteria\ApiCafeteria.csproj", "{15515D24-C1DA-4A4B-A96C-99747015C1A7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DominioCafe", "DominioCafe\DominioCafe.csproj", "{29D04A2C-48D0-45FA-8727-2083220B5DBC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AplicacionCafeteria", "AplicacionCafeteria\AplicacionCafeteria.csproj", "{EE64FC46-557C-42A8-B09A-0BD28CE2E03A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RepositorioCafe", "RepositorioCafe\RepositorioCafe.csproj", "{E97CA447-D6D0-4C30-A57B-B2133269EA4F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Elementos de la solución", "Elementos de la solución", "{D107F4C8-89CC-BEA8-D3D7-CA6B7733353D}"
+	ProjectSection(SolutionItems) = preProject
+		.gitignore = .gitignore
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{15515D24-C1DA-4A4B-A96C-99747015C1A7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{15515D24-C1DA-4A4B-A96C-99747015C1A7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{15515D24-C1DA-4A4B-A96C-99747015C1A7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{15515D24-C1DA-4A4B-A96C-99747015C1A7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{29D04A2C-48D0-45FA-8727-2083220B5DBC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{29D04A2C-48D0-45FA-8727-2083220B5DBC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{29D04A2C-48D0-45FA-8727-2083220B5DBC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{29D04A2C-48D0-45FA-8727-2083220B5DBC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EE64FC46-557C-42A8-B09A-0BD28CE2E03A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EE64FC46-557C-42A8-B09A-0BD28CE2E03A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EE64FC46-557C-42A8-B09A-0BD28CE2E03A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EE64FC46-557C-42A8-B09A-0BD28CE2E03A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E97CA447-D6D0-4C30-A57B-B2133269EA4F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E97CA447-D6D0-4C30-A57B-B2133269EA4F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E97CA447-D6D0-4C30-A57B-B2133269EA4F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E97CA447-D6D0-4C30-A57B-B2133269EA4F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {94AEDE0D-9F04-41B9-96AC-104767796A48}
+	EndGlobalSection
+EndGlobal
