@@ -18,6 +18,7 @@ El proyecto fue creado como parte de un curso de arquitectura de software y sigu
 ---
 
 ## 🏗️ **Arquitectura Hexagonal**
+```
 ┌─────────────────────────────────────────────────────────────┐
 │ CLIENTE (HTTP) │
 └─────────────────────────────────────────────────────────────┘
@@ -82,7 +83,7 @@ El proyecto fue creado como parte de un curso de arquitectura de software y sigu
 │ │ Tabla: Cafes │ │
 │ └───────────────────┘ │
 └─────────────────────────────────────────────────────────────┘
-
+```
 
 ---
 
@@ -100,40 +101,40 @@ El proyecto fue creado como parte de un curso de arquitectura de software y sigu
 ---
 
 ## 📦 **Estructura del Proyecto**
-
+```
 📁 CafeteriaHexagonal/
-
-├── 📁 ApiCafeteria/ # Adaptador de Entrada (API REST)
-│ ├── 📄 Program.cs # Endpoints y configuración
-│ └── 📄 appsettings.json # Configuración (base de datos)
 │
-├── 📁 AplicacionCafeteria/ # Casos de Uso (Servicios)
-│ ├── 📁 DTOs/ # Objetos de transferencia
-│ │ └── 📄 CafeDTO.cs
-│ ├── 📁 Interfaces/ # Puertos de entrada
-│ │ ├── 📄 IServicioCafe.cs
-│ │ └── 📄 IServicioPrepararCafe.cs
-│ ├── 📁 Mappers/ # Conversión entre capas
-│ │ └── 📄 MapeadorCafe.cs
-│ └── 📁 Servicios/ # Casos de uso
-│ ├── 📄 ServicioCafe.cs
-│ └── 📄 ServicioPrepararCafe.cs
+├── 📁 ApiCafeteria/               # Adaptador de Entrada (API REST)
+│   ├── 📄 Program.cs              # Endpoints y configuración
+│   └── 📄 appsettings.json        # Configuración (base de datos)
 │
-├── 📁 DominioCafe/ # Núcleo del negocio
-│ ├── 📁 Entidades/ # Entidades de dominio
-│ │ └── 📄 Cafe.cs
-│ └── 📁 Interfaces/ # Puertos de salida
-│ ├── 📄 IRepositorioCafe.cs
-│ ├── 📄 IObtenerCafe.cs
-│ └── 📄 IPrepararCafe.cs
+├── 📁 AplicacionCafeteria/        # Casos de Uso (Servicios)
+│   ├── 📁 DTOs/                   # Objetos de transferencia
+│   │   └── 📄 CafeDTO.cs
+│   ├── 📁 Interfaces/             # Puertos de entrada
+│   │   ├── 📄 IServicioCafe.cs
+│   │   └── 📄 IServicioPrepararCafe.cs
+│   ├── 📁 Mappers/                # Conversión entre capas
+│   │   └── 📄 MapeadorCafe.cs
+│   └── 📁 Servicios/              # Casos de uso
+│       ├── 📄 ServicioCafe.cs
+│       └── 📄 ServicioPrepararCafe.cs
 │
-└── 📁 RepositorioCafe/ # Adaptador de Salida
-├── 📁 Contexto/ # DbContext
-│ └── 📄 ContextoCafeteria.cs
-├── 📁 Modelos/ # Modelos de base de datos
-│ └── 📄 CafeModelo.cs
-└── 📄 CafeRepositorio.cs # Implementación de puertos
-
+├── 📁 DominioCafe/                # Núcleo del negocio
+│   ├── 📁 Entidades/              # Entidades de dominio
+│   │   └── 📄 Cafe.cs
+│   └── 📁 Interfaces/             # Puertos de salida
+│       ├── 📄 IRepositorioCafe.cs
+│       ├── 📄 IObtenerCafe.cs
+│       └── 📄 IPrepararCafe.cs
+│
+└── 📁 RepositorioCafe/            # Adaptador de Salida
+    ├── 📁 Contexto/               # DbContext
+    │   └── 📄 ContextoCafeteria.cs
+    ├── 📁 Modelos/                # Modelos de base de datos
+    │   └── 📄 CafeModelo.cs
+    └── 📄 CafeRepositorio.cs      # Implementación de puertos
+```
 ---
 
 ## 🔧 **Endpoints de la API**
@@ -163,8 +164,9 @@ Content-Type: application/json
   "tamaño": "Grande"
 }
 ```
+
 **Respuesta:**
-```http
+```json
 {
   "id": 1,
   "nombre": "Café Americano",
@@ -174,20 +176,25 @@ Content-Type: application/json
   "fechaCreacion": "2026-08-20T10:30:00"
 }
 ```
-**Preparar un Café:**
+
+### **2. Preparar un Café**
+
+**Petición:**
 ```http
-Petición: PUT /cafes/preparar/1
+PUT /cafes/preparar/1
 ```
+
+**Respuesta:** `204 No Content`
+
+### **3. Obtener todos los Cafés**
+
+**Petición:**
+```http
+GET /cafes
+```
+
 **Respuesta:**
-```http
-204 No Content
-```
-**Obtener todos los Cafés:**
-```http
-Petición: GET /cafes
-```
-**Respuesta:**
-```http
+```json
 [
   {
     "id": 1,
@@ -207,9 +214,10 @@ Petición: GET /cafes
   }
 ]
 ```
-**🗄️ Base de Datos**
-Tabla: Cafes
-```http
+## 🗄️ **Base de Datos**
+
+### **Tabla: Cafes**
+```sql
 CREATE TABLE Cafes (
     Id INT IDENTITY(1,1) PRIMARY KEY,
     Nombre NVARCHAR(100) NOT NULL,
@@ -219,16 +227,20 @@ CREATE TABLE Cafes (
     FechaCreacion DATETIME2 NOT NULL DEFAULT GETDATE()
 );
 ```
-**🚀 Cómo Ejecutar el Proyecto**
-Prerrequisitos
-.NET 8.0 SDK
 
-SQL Server 2019+ o LocalDB
+---
 
-Visual Studio 2022 o VS Code
+## 🚀 **Cómo Ejecutar el Proyecto**
 
-Instalación
-```http
+### **Prerrequisitos**
+
+- [.NET 8.0 SDK](https://dotnet.microsoft.com/download)
+- [SQL Server 2019+](https://www.microsoft.com/es-es/sql-server/sql-server-downloads) o [LocalDB](https://docs.microsoft.com/en-us/sql/database-engine/configure-windows/sql-server-express-localdb)
+- [Visual Studio 2022](https://visualstudio.microsoft.com/) o [VS Code](https://code.visualstudio.com/)
+
+### **Instalación**
+
+```bash
 # 1. Clonar el repositorio
 git clone https://github.com/jolurn/CafeteriaHexagonal.git
 
@@ -242,17 +254,32 @@ dotnet restore
 cd ApiCafeteria
 dotnet run
 ```
-**Acceder a Swagger**
-Abre tu navegador y ve a:
-```http
+
+### **Acceder a Swagger**
+```
 https://localhost:7042/swagger/index.html
 ```
-👥 Autor
-Jorge Luis Ramos Nolasco
 
-GitHub: @jolurn
+---
 
-⭐ ¡Dale una estrella!
-Si te gustó este proyecto, no olvides darle ⭐ en GitHub. ¡Gracias!
+## 👥 **Autor**
 
-https://img.shields.io/badge/GitHub-S%C3%ADgueme-181717?style=for-the-badge&logo=github&logoColor=white
+**Jorge Luis Ramos Nolasco**
+
+- GitHub: [@jolurn](https://github.com/jolurn)
+
+---
+
+## 📄 **Licencia**
+
+MIT
+
+---
+
+## ⭐ **¡Dale una estrella!**
+
+Si te gustó este proyecto, ¡dale ⭐ en GitHub!
+
+---
+
+[![GitHub](https://img.shields.io/badge/GitHub-Sígueme-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/jolurn)
